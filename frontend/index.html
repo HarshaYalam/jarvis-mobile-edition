@@ -1,31 +1,199 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>J.A.R.V.I.S</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <meta name="theme-color" content="#050b14">
+
+    <title>J.A.R.V.I.S — Mobile AI</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header><h1>J.A.R.V.I.S</h1><p>MOBILE EDITION</p></header>
-<div class="core">
-<div class="ring r1"></div>
-<div class="ring r2"></div>
-<div class="center"></div>
+
+<div class="app">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <div>
+            <h1>J.A.R.V.I.S</h1>
+            <span>MOBILE INTELLIGENCE SYSTEM</span>
+        </div>
+
+        <div class="connection">
+            <i id="networkDot"></i>
+            <span id="networkText">ONLINE</span>
+        </div>
+
+    </header>
+
+
+    <!-- REACTOR -->
+    <section class="reactor-section">
+
+        <div class="reactor">
+
+            <div class="reactor-ring ring-one"></div>
+            <div class="reactor-ring ring-two"></div>
+            <div class="reactor-ring ring-three"></div>
+
+            <div class="reactor-core">
+                <div class="core-light"></div>
+                <span>AI</span>
+            </div>
+
+        </div>
+
+        <div class="core-status">
+            <strong>CORE ACTIVE</strong>
+            <small id="systemTime">00:00:00</small>
+        </div>
+
+    </section>
+
+
+    <!-- TELEMETRY -->
+    <section class="telemetry">
+
+        <div class="metric">
+            <span>CPU</span>
+            <strong id="cpu">32%</strong>
+            <div class="bar">
+                <i id="cpuBar"></i>
+            </div>
+        </div>
+
+        <div class="metric">
+            <span>MEMORY</span>
+            <strong id="memory">48%</strong>
+            <div class="bar">
+                <i id="memoryBar"></i>
+            </div>
+        </div>
+
+        <div class="metric">
+            <span>NETWORK</span>
+            <strong id="ping">24ms</strong>
+            <div class="bar">
+                <i id="networkBar"></i>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- SYSTEM STATUS -->
+    <section class="panel">
+
+        <div class="panel-title">
+            <span>SYSTEM STATUS</span>
+            <small>v7.4.1</small>
+        </div>
+
+        <div class="status-row">
+            <span>AI CORE</span>
+            <b class="online">● ONLINE</b>
+        </div>
+
+        <div class="status-row">
+            <span>NETWORK</span>
+            <b class="online">● ONLINE</b>
+        </div>
+
+        <div class="status-row">
+            <span>VOICE ENGINE</span>
+            <b class="online">● READY</b>
+        </div>
+
+        <div class="status-row">
+            <span>MEMORY</span>
+            <b class="online">● ACTIVE</b>
+        </div>
+
+    </section>
+
+
+    <!-- QUICK COMMANDS -->
+    <section class="quick">
+
+        <button onclick="quickCommand('Run system diagnostics')">
+            DIAGNOSTICS
+        </button>
+
+        <button onclick="quickCommand('What is the current system status?')">
+            STATUS
+        </button>
+
+        <button onclick="quickCommand('Activate voice mode')">
+            VOICE
+        </button>
+
+        <button onclick="quickCommand('Show my commands')">
+            COMMANDS
+        </button>
+
+    </section>
+
+
+    <!-- CHAT -->
+    <section class="chat-container">
+
+        <div class="chat-header">
+            <span>J.A.R.V.I.S TERMINAL</span>
+            <small id="typingStatus"></small>
+        </div>
+
+        <div id="chat" class="chat">
+
+            <div class="message jarvis">
+                <div class="avatar">J</div>
+
+                <div class="bubble">
+                    Good day. J.A.R.V.I.S mobile intelligence core is
+                    online and ready for your commands.
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INPUT -->
+    <section class="input-area">
+
+        <button id="voice" class="icon-button">
+            🎙
+        </button>
+
+        <input
+            id="msg"
+            type="text"
+            autocomplete="off"
+            placeholder="Ask J.A.R.V.I.S..."
+        >
+
+        <button id="send" class="send-button">
+            ➤
+        </button>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <span>SECURE CONNECTION</span>
+        <span>•</span>
+        <span>AI CORE 100%</span>
+    </footer>
+
 </div>
-<p class="core-text">CORE ACTIVE</p>
-<div class="status">
-<h2>SYSTEM STATUS</h2>
-<div class="row"><span>AI CORE</span><b class="on">● ONLINE</b></div>
-<div class="row"><span>NETWORK</span><b class="on">● ONLINE</b></div>
-<div class="row"><span>VOICE</span><b class="off">○ LOCKED</b></div>
-<div class="row"><span>MEMORY</span><b class="off">○ LOCKED</b></div>
-</div>
-<div class="chat" id="chat"></div>
-<div class="input-area">
-<input id="msg" placeholder="Ask J.A.R.V.I.S...">
-<button id="send">SEND</button>
-</div>
+
 <script src="script.js"></script>
+
 </body>
 </html>
